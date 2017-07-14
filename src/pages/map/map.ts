@@ -1,7 +1,7 @@
 import { Component, OnInit ,ViewChild ,ElementRef } from '@angular/core';
 import { NavController,ViewController  } from 'ionic-angular';
 import { Geolocation ,GeolocationOptions ,Geoposition ,PositionError } from '@ionic-native/geolocation';
-
+import { NearByMap  } from './nearbymap';
 declare var google: any;
 @Component({
   selector: 'map',
@@ -70,7 +70,11 @@ chooseItem(item: any) {
 
 
 
+nearbymap()
+  {
+  this.navCtrl.setRoot(NearByMap);
 
+  }
 
 
 

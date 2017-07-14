@@ -20,7 +20,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { MapView } from '../pages/map/map';
 import { IonicAudioModule, AudioProvider, WebAudioProvider} from 'ionic-audio';
 import { PageGmapAutocomplete} from '../pages/map/page-gmap-autocomplete/page-gmap-autocomplete';
-
+import { NearByMap  } from '../pages/map/nearbymap';
 
 export function myCustomAudioProviderFactory() {
   return new WebAudioProvider();
@@ -38,7 +38,8 @@ export function myCustomAudioProviderFactory() {
       Music,
       ContactSearch,
       ContactAdd,
-      MapView, 
+      MapView,
+      NearByMap, 
        PageGmapAutocomplete,
       SideDrawer
   ],
@@ -60,6 +61,7 @@ export function myCustomAudioProviderFactory() {
     HomePage,
     UserAdd,
     Music,
+    NearByMap,
     MapView ,
      PageGmapAutocomplete,
    ContactSearch,
