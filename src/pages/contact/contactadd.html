@@ -1,0 +1,30 @@
+<brain-header>
+</brain-header>
+
+<ion-content class="has-header" style="margin-top: 18%">
+    <ion-list>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="contactObject.displayName" placeholder="Enter Your Name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="contactObject.nickName" placeholder="Enter Your Other Name "></ion-input>
+        </ion-item>
+          <ion-item>
+           
+            <ion-input type="tel" [(ngModel)]="contactObject.phoneNumber" placeholder="Enter Phone number"></ion-input>
+        </ion-item>
+ 
+        <ion-item>
+            <ion-label>Type</ion-label>
+            <ion-select [(ngModel)]="contactObject.phoneType">
+                <ion-option value="home">Home</ion-option>
+                <ion-option value="work">Work</ion-option>
+                <ion-option value="other">Other</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+     
+</ion-content>
+<ion-footer no-border>
+    <button ion-button block (click)="addContact(contactObject)">Save</button>
+</ion-footer>

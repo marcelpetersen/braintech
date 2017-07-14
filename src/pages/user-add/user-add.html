@@ -1,0 +1,41 @@
+<brain-header>
+</brain-header>
+<ion-content class="has-header" style="margin-top: 18%">
+ <form >
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text"  name="title" [(ngModel)]="name"></ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label>DOB</ion-label>
+       <ion-datetime displayFormat="MM/YYYY" pickerFormat="MMMM YYYY"></ion-datetime>
+      </ion-item>
+     
+    <ion-item>
+  <ion-label>Prefered Language</ion-label>
+  <ion-select>
+   <ion-label>Language</ion-label>
+    <ion-option value="e">English</ion-option>
+    <ion-option value="g">Gujarati</ion-option>
+    <ion-option value="h">Hindhi</ion-option>
+    <ion-option value="m">Marathi</ion-option>
+    <ion-option value="t">Tamil</ion-option>
+    <ion-option value="m">Malaylam</ion-option>
+    </ion-select>
+</ion-item>
+
+ <ion-item>
+        <ion-label>Upload Image</ion-label>
+
+
+                 <ion-avatar item-end>
+
+          <ion-icon ios="ios-folder" md="md-folder" ></ion-icon>
+              </ion-avatar>
+         </ion-item>
+
+
+      <button ion-button type="submit" block (click)="save()">Add User</button>
+    </form>
+    </ion-content>

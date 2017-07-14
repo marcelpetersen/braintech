@@ -1,0 +1,23 @@
+<brain-header>
+</brain-header>
+
+<ion-content padding style="margin-top: 18%">
+	<ion-searchbar (ionInput)="findContact($event)" placeholder="Enter display name"></ion-searchbar>
+
+	<ion-list [hidden]="!search">
+		<ion-item *ngFor="let item of contactsfound">{{item.displayName}}</ion-item>
+	</ion-list>
+	
+</ion-content>
+
+<ion-footer no-border>
+
+
+
+
+<button ion-button round icon-right  style="margin-left: 10%"  (click)="newContact()">
+  Add Contact From Here 
+  <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
+</button>
+
+</ion-footer>

@@ -1,0 +1,26 @@
+<brain-header>
+</brain-header>
+
+<ion-content>
+    <div id="map"></div>
+    <ion-list>
+        <ion-item margin>
+            <ion-input type="text" placeholder="Pick  Your address"
+                (click)="showModal()" 
+                [(ngModel)]="address.place">
+            </ion-input>
+        </ion-item>
+        <ion-item *ngIf="address.set==true">
+            <ion-icon name="pin" item-left></ion-icon>
+            <h3>Your Search  address</h3>
+            <p>{{ placedetails.address }}</p>
+            <p>{{ placedetails.components.street_number.long }}</p>
+            <h3>Postal Code</h3>
+            <p>{{ placedetails.components.postal_code.long }}{{ placedetails.components.postal_code_suffix.long }}</p>    
+            <h3>City</h3>
+            <p>{{ placedetails.components.locality.long }}</p>     
+            <h3>Location geometry</h3>
+            <p>{{ placedetails.lat }}, {{ placedetails.lng }}</p>                                           
+        </ion-item>
+    </ion-list>
+</ion-content>

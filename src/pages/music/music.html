@@ -1,0 +1,49 @@
+<brain-header>
+ 
+</brain-header>
+
+<ion-content class="has-header" style="margin-top: 18%">
+<ion-searchbar (ionInput)="searchMusic($event)" placeholder="Enter Music name" ></ion-searchbar>
+ 
+<ion-list>
+   <audio-track #audio *ngFor="let track of myTracks" [track]="track" (onFinish)="onTrackFinished($event)">
+     <ion-item>
+       <ion-thumbnail item-left>
+         <img src="{{audio.art}}">
+         <audio-track-play dark [audioTrack]="audio">
+           <ion-spinner></ion-spinner>
+         </audio-track-play>
+       </ion-thumbnail>
+       <div item-content style="width:100%">
+         <p><strong>{{audio.title}}</strong> &#x26AC; <em>{{audio.artist}}</em></p>
+         <audio-track-progress-bar duration progress [audioTrack]="audio"></audio-track-progress-bar>
+         <em style="font-size:.5em">Track ID: {{audio.id}}</em>
+       </div>
+     </ion-item>
+   </audio-track>
+ </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-list>
+    <ion-item>
+      <ion-label>Select track to play</ion-label>
+      <ion-select [(ngModel)]="selectedTrack">
+        <ion-option *ngFor="let track of allTracks" value="{{track.id}}">{{track.title}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+<button ion-button icon-only (click)="playSelectedTrack()"  style="margin-left: 35%">
+<ion-icon ios="ios-play" md="md-play"></ion-icon>
+</button>
+
+  <button  ion-button icon-only  (click)="pauseSelectedTrack()">
+    
+<ion-icon ios="ios-pause" md="md-pause"></ion-icon>
+
+  </button>
+
+</ion-footer>
+
+

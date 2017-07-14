@@ -1,58 +1,44 @@
+<brain-header>
+</brain-header>
 
 
-<ion-header>
-  <ion-navbar custom-background-color>
-    <ion-title custom-font-color>BrainTech</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content >
+<ion-searchbar [(ngModel)]="searchQuery1"  >
+</ion-searchbar>
+<ion-item *ngFor="let collecting of myTracks; let i = index">
+   <ion-label style="margin-left: 20%">{{ collecting.name}}</ion-label>
+<ion-checkbox  (click)="changeDeleteState(i)"></ion-checkbox>
+   <ion-avatar item-end>
+      <img src="download.jpg">
+    </ion-avatar>
 
+ </ion-item>
 
-<ion-content>
-<ion-menu [content]="mycontent"  >
-  <ion-content style="background-color: #3f4041">
-    
-
-    <ion-item style="background-color: #3f4041">
-      <ion-avatar item-start>
-        <ion-icon ios="ios-pin" md="md-pin" style="color:white"></ion-icon>
-      </ion-avatar>
-      <h1 style="color:white">GPS</h1>
-    
-    </ion-item>
-
-    <ion-item style="background-color: #3f4041">
-      <ion-avatar item-start>
-        <ion-icon ios="ios-musical-note" md="ios-musical-note-outline" style="color:white"></ion-icon>
-      </ion-avatar>
-      <h1 style="color:white">Music</h1>
-    
-    </ion-item>
-
-
-    <ion-item style="background-color: #3f4041">
-      <ion-avatar item-start>
-     <ion-icon ios="ios-contact" md="ios-contact-outline" style="color:white"></ion-icon>
-      </ion-avatar>
-      <h1 style="color:white">Contacts</h1>
-         
-    </ion-item>
-
-
-<ion-item style="background-color: #3f4041">
-      <ion-avatar item-start>
-     <ion-icon ios="logo-facebook" md="logo-facebook" style="color:white"></ion-icon>
-      </ion-avatar>
-      <h1 style="color:white">Socail Media</h1>
-         
-    </ion-item>
-
-
-
-
-
-  </ion-content>
-</ion-menu>
 </ion-content>
-<ion-nav #mycontent [root]="rootPage"></ion-nav>
+
+<ion-footer>
+
+
+<ion-searchbar [(ngModel)]="searchQuery"  style="width:50%;margin-left: 20%" (ionInput)="getItems($event)"
+(ionCancel)="onCancel($event)" >
+</ion-searchbar>
+
+
+
+<button ion-button icon-right (click)="addUser()">
+  Add
+  <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
+</button>
+
+
+
+
+<button ion-button icon-right  style="margin-left: 50%" (click)="remove()"  >
+  Delete
+   <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+</button>
+</ion-footer>
+
+
 
 
